@@ -38,7 +38,10 @@ TIMER_WAITTIME=5
 
 ## Script Functionality begins here: ##
 
-read -p 'Enter a Steam AppID: ' STEAMAPPID
+STEAMAPPID="$1"
+if [ -z "$STEAMAPPID" ]; then
+  read -p 'Enter a Steam AppID: ' STEAMAPPID
+fi
 
 # Don't mess with these variables, as they are necessary for this script to function.
 TIMES_TRIED=0
